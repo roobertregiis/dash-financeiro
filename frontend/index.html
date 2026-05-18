@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Financeiro</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Dashboard Financeiro</h1>
+    <p>Importe extratos ou conecte sua conta via Pluggy para ver suas finanças em tempo real.</p>
+  </header>
+
+  <main>
+    <section class="actions">
+      <div class="action-card">
+        <h2>Importar arquivo</h2>
+        <input id="fileInput" type="file" accept=".ofx,.csv" />
+        <select id="bankSelect">
+          <option value="C6 Bank">C6 Bank</option>
+          <option value="Banco do Brasil">Banco do Brasil</option>
+          <option value="Cartão Caju">Cartão Caju</option>
+        </select>
+      </div>
+      <div class="action-card">
+        <h2>Conectar via Pluggy</h2>
+        <button id="connectButton">Conectar banco</button>
+        <p class="hint">Este botão inicia o fluxo Open Finance.</p>
+      </div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card">
+        <span class="label">Receitas</span>
+        <strong id="incomeValue">R$ 0,00</strong>
+      </article>
+      <article class="summary-card">
+        <span class="label">Despesas</span>
+        <strong id="expenseValue">R$ 0,00</strong>
+      </article>
+      <article class="summary-card">
+        <span class="label">Saldo</span>
+        <strong id="balanceValue">R$ 0,00</strong>
+      </article>
+      <article class="summary-card">
+        <span class="label">Transações</span>
+        <strong id="txCount">0</strong>
+      </article>
+    </section>
+
+    <section class="chart-section">
+      <h2>Evolução de gastos por categoria</h2>
+      <canvas id="categoryChart"></canvas>
+    </section>
+
+    <section class="transactions-section">
+      <h2>Últimas transações</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Banco</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody id="transactionBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

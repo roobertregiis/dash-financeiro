@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+body {
+  min-height: 100vh;
+}
+header {
+  padding: 32px 24px 16px;
+  background: #1a56db;
+  color: #fff;
+}
+header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+}
+header p {
+  margin: 0;
+  max-width: 740px;
+  line-height: 1.6;
+}
+main {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.action-card, .summary-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 14px 30px rgba(15,23,42,0.08);
+}
+.action-card h2, .chart-section h2, .transactions-section h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+.action-card input, .action-card select, .action-card button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+.action-card button {
+  border: none;
+  background: #1a56db;
+  color: #fff;
+  cursor: pointer;
+}
+.action-card button:hover {
+  filter: brightness(1.05);
+}
+.hint {
+  margin-top: 10px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.summary-card .label {
+  color: #64748b;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+.summary-card strong {
+  font-size: 1.9rem;
+}
+.chart-section, .transactions-section {
+  margin-bottom: 24px;
+}
+.chart-section {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 14px 30px rgba(15,23,42,0.05);
+}
+.chart-section canvas {
+  width: 100%;
+  min-height: 320px;
+}
+.transactions-section table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(15,23,42,0.05);
+}
+.transactions-section th, .transactions-section td {
+  padding: 16px 18px;
+  text-align: left;
+}
+.transactions-section th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.transactions-section tr + tr td {
+  border-top: 1px solid #e2e8f0;
+}
+@media (max-width: 640px) {
+  .transactions-section th, .transactions-section td {
+    padding: 12px 10px;
+  }
+}
