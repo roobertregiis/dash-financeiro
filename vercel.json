@@ -1,14 +1,12 @@
 {
-  "buildCommand": "cd backend && npm install",
-  "env": {
-    "PLUGGY_CLIENT_ID": "@pluggy_client_id",
-    "PLUGGY_CLIENT_SECRET": "@pluggy_client_secret"
-  },
-  "routes": [
+  "version": 2,
+  "builds": [
     {
-      "src": "/api/(.*)",
-      "dest": "/backend/index.js"
-    },
+      "src": "backend/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
     {
       "src": "/(.*)",
       "dest": "/backend/index.js"
